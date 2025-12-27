@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<main class="game">
+
+  <header class="header">
+    <h1>Snake</h1>
+    <p class="subtitle">Logic · Timing · Keyboard</p>
+  </header>
+
+  <section class="stats">
+    <div>
+      <span class="label">Score</span>
+      <strong id="score">0</strong>
+    </div>
+    <div>
+      <span class="label">High Score</span>
+      <strong id="highScore">0</strong>
+    </div>
+    <div>
+      <span class="label">Speed</span>
+      <strong id="speed">1x</strong>
+    </div>
+  </section>
+
+  <section class="board" id="board"></section>
+
+  <section class="controls">
+  <button id="startBtn">Start</button>
+  <button id="pauseBtn" disabled>Pause</button>
+  <button id="resetBtn" class="reset" disabled>Reset</button>
+</section>
+
+
+  <p class="hint">Use Arrow Keys • Space to Pause</p>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
