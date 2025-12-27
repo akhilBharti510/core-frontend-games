@@ -1,0 +1,131 @@
+:root {
+  --bg-main: #f2f3f5;
+  --bg-surface: #ffffff;
+  --bg-elevated: #e8eaee;
+
+  --border: #d0d5dd;
+
+  --text-main: #1f2933;
+  --text-muted: #667085;
+
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.12);
+
+  --success: #16a34a;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+}
+
+.game {
+  width: 100%;
+  max-width: 360px;
+  padding: 2rem;
+}
+
+/* ===== HEADER ===== */
+.header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ===== STATUS ===== */
+.status {
+  margin: 1.25rem 0;
+  padding: 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ===== BOARD ===== */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.cell:hover {
+  background: var(--bg-elevated);
+}
+
+.cell.disabled {
+  cursor: default;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  margin-top: 1.25rem;
+  text-align: right;
+}
+
+.footer button {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.footer button:hover {
+  filter: brightness(1.04);
+}
+
+/* ===== MODE SELECTOR ===== */
+.mode {
+  margin: 1rem 0;
+}
+
+.mode label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.mode select {
+  width: 100%;
+  padding: 0.45rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-main);
+}
+
+.cell.win {
+  background: rgba(22, 163, 74, 0.15);
+  border-color: var(--success);
+}

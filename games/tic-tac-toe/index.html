@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<main class="game">
+
+  <header class="header">
+    <h1>Tic Tac Toe</h1>
+    <p class="subtitle">Take turns · Think ahead · Win clean</p>
+  </header>
+
+  <section class="mode">
+  <label for="mode">Game mode</label>
+  <select id="mode">
+    <option value="pvp">Player vs Player</option>
+    <option value="ai">Player vs Computer</option>
+  </select>
+</section>
+
+
+  <section class="status">
+    <p id="statusText">Player X's turn</p>
+  </section>
+
+  <section class="board" id="board">
+    <!-- cells injected by JS -->
+  </section>
+
+  <footer class="footer">
+    <button id="resetBtn">Restart</button>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
