@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<main class="game">
+
+  <header class="header">
+    <h1>Rock · Paper · Scissors</h1>
+    <p class="subtitle">Best of 5 · Clean logic · No noise</p>
+  </header>
+
+  <section class="format">
+  <span class="label">Match format</span>
+  <div class="format-options">
+    <button data-rounds="3" class="active">Best of 3</button>
+    <button data-rounds="5">Best of 5</button>
+    <button data-rounds="7">Best of 7</button>
+  </div>
+</section>
+
+
+  <section class="scoreboard">
+    <div>
+      <span class="label">You</span>
+      <strong id="playerScore">0</strong>
+    </div>
+    <div>
+      <span class="label">Computer</span>
+      <strong id="computerScore">0</strong>
+    </div>
+  </section>
+
+  <section class="arena">
+    <p id="resultText">Choose your move</p>
+
+    <div class="choices">
+      <button data-choice="rock">Rock</button>
+      <button data-choice="paper">Paper</button>
+      <button data-choice="scissors">Scissors</button>
+    </div>
+  </section>
+
+  <section class="history">
+    <p class="history-title">Recent rounds</p>
+    <ul id="historyList"></ul>
+  </section>
+
+  <footer class="footer">
+    <button id="resetBtn">Reset Match</button>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
