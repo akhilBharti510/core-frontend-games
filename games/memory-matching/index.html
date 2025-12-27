@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Memory Matching Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<main class="game">
+
+  <header class="header">
+    <h1>Memory Matching</h1>
+    <p class="subtitle">Focus · Recall · Precision</p>
+  </header>
+
+  <section class="description">
+  <p>
+    Flip two cards at a time and try to find matching pairs.
+    If the cards match, they stay revealed.
+    Otherwise, they flip back.
+    Complete the board using the fewest moves possible.
+  </p>
+</section>
+
+
+  <section class="stats">
+    <div>
+      <span class="label">Moves</span>
+      <strong id="moves">0</strong>
+    </div>
+    <div>
+      <span class="label">Matched</span>
+      <strong id="matched">0 / 8</strong>
+    </div>
+  </section>
+
+  <section class="board" id="board"></section>
+
+  <footer class="footer">
+    <button id="resetBtn">Restart</button>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
