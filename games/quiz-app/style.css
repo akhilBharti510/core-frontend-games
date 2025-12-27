@@ -1,0 +1,144 @@
+:root {
+  /* ===== BACKGROUND ===== */
+  --bg-main: #f2f3f5;        /* soft neutral gray */
+  --bg-surface: #ffffff;    /* clean card surface */
+  --bg-elevated: #e8eaee;   /* hover / selected */
+
+  /* ===== BORDERS ===== */
+  --border: #d0d5dd;
+
+  /* ===== TEXT ===== */
+  --text-main: #1f2933;     /* charcoal (not pure black) */
+  --text-muted: #667085;    /* professional muted text */
+
+  /* ===== ACCENT ===== */
+  --accent: #ebeb25;        /* calm blue (enterprise-grade) */
+  --accent-soft: rgba(37, 99, 235, 0.12);
+
+  /* ===== STATES ===== */
+  --success: #16a34a;       /* sober green */
+  --danger: #dc2626;        /* controlled red */
+}
+
+
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+}
+
+.quiz-container {
+  width: 100%;
+  max-width: 520px;
+  padding: 1.75rem;
+}
+
+/* ===== HEADER ===== */
+.quiz-header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.progress-track {
+  margin-top: 0.6rem;
+  height: 6px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+/* ===== CARD ===== */
+.quiz-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+.quiz-card h2 {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+/* ===== OPTIONS ===== */
+.options {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.option {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
+  color: var(--text-main);
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.option:hover {
+  border-color: var(--accent);
+}
+
+.option.selected {
+  border-color: var(--accent);
+  background: rgba(88, 166, 255, 0.12);
+}
+
+.option.correct {
+  border-color: var(--success);
+  background: rgba(46, 160, 67, 0.15);
+}
+
+.option.wrong {
+  border-color: var(--danger);
+  background: rgba(248, 81, 73, 0.15);
+}
+
+/* ===== FOOTER ===== */
+.quiz-footer {
+  margin-top: 1.25rem;
+  text-align: right;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  color: #0d1117;
+  padding: 0.55rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
