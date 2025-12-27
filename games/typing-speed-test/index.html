@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<main class="game">
+
+  <header class="header">
+    <h1>Typing Speed Test</h1>
+    <p class="subtitle">Speed · Accuracy · Consistency</p>
+  </header>
+
+  <section class="description">
+    <p>
+      Type the text shown below. A new paragraph is loaded every time.
+      The test ends when time runs out or when you complete the text correctly.
+    </p>
+  </section>
+
+  <section class="controls">
+    <label>
+      Duration
+      <select id="duration">
+        <option value="30">30s</option>
+        <option value="60" selected>60s</option>
+        <option value="120">120s</option>
+      </select>
+    </label>
+
+    <div class="best">
+      Best WPM: <strong id="bestWpm">0</strong>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div>
+      <span class="label">Time</span>
+      <strong id="time">60</strong>s
+    </div>
+    <div>
+      <span class="label">WPM</span>
+      <strong id="wpm">0</strong>
+    </div>
+    <div>
+      <span class="label">Accuracy</span>
+      <strong id="accuracy">100</strong>%
+    </div>
+  </section>
+
+  <section class="test">
+    <p id="text">Click start to load a typing test.</p>
+    <textarea
+      id="input"
+      placeholder="Start typing here..."
+      disabled
+    ></textarea>
+  </section>
+
+  <footer class="footer">
+    <button id="startBtn">Start</button>
+    <button id="resetBtn">Reset</button>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

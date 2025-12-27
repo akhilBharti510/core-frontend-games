@@ -1,0 +1,155 @@
+:root {
+  --bg-main: #f2f3f5;
+  --bg-surface: #ffffff;
+  --bg-elevated: #e8eaee;
+  --border: #d0d5dd;
+
+  --text-main: #1f2933;
+  --text-muted: #667085;
+
+  --accent: #2563eb;
+  --success: #16a34a;
+  --danger: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+}
+
+.game {
+  width: 100%;
+  max-width: 560px;
+  padding: 2rem;
+}
+
+/* ===== HEADER ===== */
+.header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ===== BLOCKS ===== */
+.description,
+.controls,
+.stats,
+.test {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.description p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ===== CONTROLS ===== */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.controls select {
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.4rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+
+.best {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ===== STATS ===== */
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ===== TEST ===== */
+#text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+#text span.correct {
+  color: var(--success);
+}
+
+#text span.incorrect {
+  color: var(--danger);
+}
+
+#text span.pending {
+  color: var(--text-muted);
+}
+
+textarea {
+  width: 100%;
+  min-height: 110px;
+  resize: none;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+textarea:disabled {
+  background: var(--bg-elevated);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
