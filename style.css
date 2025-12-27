@@ -1,89 +1,162 @@
+/* ===== THEME TOKENS ===== */
 :root {
-  --bg-main: #0f172a;
-  --bg-card: #1e293b;
-  --text-main: #e5e7eb;
-  --text-muted: #94a3b8;
-  --accent: #38bdf8;
+  --bg-main: #83bba6;          /* soft neutral background */
+  --bg-surface: #f6f4ef;      /* cards / surfaces */
+  --border: #e5e7eb;
+
+  --text-main: #111827;       /* strong readable */
+  --text-muted: #6b7280;
+
+  --accent: #2563eb;          /* professional blue */
+  --accent-soft: #eb92eb;
+
+  --success: #16a34a;
 }
 
+/* ===== RESET ===== */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
 body {
   background: var(--bg-main);
   color: var(--text-main);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===== HERO ===== */
 .hero {
+  padding: 3rem 1.5rem 2.5rem;
   text-align: center;
-  padding: 4rem 1rem 3rem;
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    var(--bg-main)
+  );
+  border-bottom: 1px solid var(--border);
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
 .hero p {
+  font-size: 0.95rem;
   color: var(--text-muted);
-  max-width: 700px;
-  margin: auto;
   line-height: 1.6;
 }
 
 /* ===== GRID ===== */
 .games-grid {
+  width: 100%;
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
 }
 
+/* ===== GAME CARD ===== */
 .game-card {
-  background: var(--bg-card);
-  border-radius: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
   padding: 1.5rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .game-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border-color: var(--accent);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .game-card h2 {
+  font-size: 1.15rem;
   margin-bottom: 0.5rem;
 }
 
 .game-card p {
+  font-size: 0.9rem;
   color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
 }
 
+/* ===== PLAY LINK ===== */
 .game-card a {
+  align-self: flex-start;
   text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+
   color: var(--accent);
-  font-weight: 600;
+  background: var(--accent-soft);
+
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.coming-soon span {
-  color: #facc15;
-  font-weight: 600;
+.game-card a:hover {
+  background: var(--accent);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* ===== COMING SOON ===== */
+.game-card.coming-soon {
+  opacity: 0.75;
+  pointer-events: none;
+  background: #fafafa;
+}
+
+.game-card.coming-soon span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  
 }
 
 /* ===== FOOTER ===== */
 footer {
+  margin-top: auto;
+  padding: 1.25rem;
   text-align: center;
-  padding: 2rem 1rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+  background: #ffffff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
 }
