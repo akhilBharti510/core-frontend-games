@@ -20,7 +20,7 @@ function loadQuestion() {
 
   locked = false;
   selectedOption = null;
-  time = 15;
+  time = 20;
 
   timerEl.textContent = `${time}s`;
   nextBtn.disabled = true;

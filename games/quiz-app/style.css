@@ -35,6 +35,8 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--text-main);
+  font-size: 15.5px;
+  line-height: 1.6;
 }
 
 .quiz-container {
@@ -84,6 +86,8 @@ body {
   font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+  font-weight: 500;
 }
 
 /* ===== OPTIONS ===== */
